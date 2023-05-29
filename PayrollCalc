@@ -1,0 +1,362 @@
+
+package payroll;
+
+/**
+ *
+ * @author Iñigo
+ */
+public class PayrollCalc {
+   
+	
+    private String name;
+    private String surname;
+    private String address;
+    private String employeeid;
+    private String birthday;
+    private String phonenumber;
+    private String sssno;
+    private String philhealthno;
+    private String tinno;
+    private String pagibigno;
+    private String immediatesupervisor;
+    private String status;
+    private String position;
+    private double hoursWorked;
+    private double hourlyPayRate;
+    private double dailyhoursworked;
+    private double dailypayrate;
+    public double sss;
+    
+    
+   
+ 
+    public PayrollCalc()
+    {
+ 
+    }
+ 
+    public PayrollCalc(String n, String s, String a, String e, String b, String pn, String sn, String ph, String ad, String ti, String pi, String st, String po, String is, double hw, double hpr, double dw, double dpr, double sss)
+    {
+        this.name = n;
+        this.surname = s;
+        this.address = a;
+        this.employeeid= e;
+        this.birthday = b;
+        this.phonenumber = pn;
+        this.sssno = sn;
+        this.philhealthno = ph;
+        this.tinno = ti;
+        this.pagibigno = pi;
+        this.status = st;
+        this.position = po;
+        this.immediatesupervisor = is;
+        this.hoursWorked = hw;
+        this.hourlyPayRate = hpr;
+        this.dailyhoursworked = dw;
+        this.dailypayrate = dpr; 
+        this.sss = sss;
+        
+    }    
+        
+        
+     
+ public double grossPay(double hourlyRate, double hrsWorked)
+ {
+        double grossPay = (hourlyRate * hrsWorked);
+        return grossPay;
+ }
+ 
+ public double grosspay(double dailyworked, double dailyhourworked)
+ {
+    	double grossPay = (dailypayrate * dailyhoursworked);
+    	return grossPay;
+    	
+ }
+      
+ public double philhealth(double grosspay)
+ {
+		return philhealth;
+  		
+      
+ } 	
+        int philhealth;
+        double grosspay;
+	    
+			
+		{
+	    if (grosspay >= 0.00 && grosspay <= 10000) {
+	        philhealth = 300;
+	       } else if (grosspay >= 10000 && grosspay <= 60000) {
+	        philhealth = 600;
+          }
+        }
+			
+		
+  public double pagibig(double grosspay)
+{
+		return pagibig;
+			  		
+} 	
+						
+		int pagibig;
+						
+		{
+		if (grosspay >= 0.00 && grosspay <= 10000) {
+		    pagibig = 50;
+		   } else if (grosspay >= 10000 && grosspay <= 60000) {
+		    pagibig = 100;
+	      }
+	    }	
+
+ public double ricesubsidyallowance(double grosspay)
+{
+		return ricesubsidyallowance;
+									  											      
+} 	
+												
+		int ricesubsidyallowance;												
+		{
+	    if (grosspay >= 0.00 && grosspay <= 22000) {
+		    ricesubsidyallowance = 1500;
+		    } else if (grosspay >= 23000 && grosspay <= 80000) {
+			ricesubsidyallowance = 3000;
+			} else {
+				 
+	      }
+        }	
+					
+ public double phoneallowance(double grosspay)
+{
+		return phoneallowance;
+											  		
+} 	
+		double phoneallowance;
+													
+{
+		if (grosspay >= 0.00 && grosspay <= 22000) {
+		    phoneallowance = 500;
+		    } else if (grosspay >= 23000 && grosspay <= 40000) { 
+			phoneallowance = 800;
+					 
+			} else if (grosspay >= 23000 && grosspay <= 80000) {
+			phoneallowance = 1000;
+			} else {
+			
+	       }						
+	     }	
+			
+ public double clothingallowance(double grosspay)
+{
+			return clothingallowance;										  													      
+} 	
+														
+		 double clothingallowance;											
+		 {
+		 if (grosspay >= 0.00 && grosspay <= 22000) {
+			clothingallowance = 500;
+			} else if (grosspay >= 23000 && grosspay <= 40000) { 
+			clothingallowance = 800;
+			} else if (grosspay >= 23000 && grosspay <= 80000) {
+		     clothingallowance= 1000;
+			} else {
+		    
+	        }						
+		  }		
+		 
+		 
+						
+
+public double Grosspay;
+public double tax;
+
+	 {
+	 {
+		
+			} if (Grosspay <= 20832)
+				tax = 0;
+	          else if(Grosspay >= 33333) 
+				tax = 0.20 * Grosspay;
+		    	Grosspay = Grosspay - 0;
+			
+			
+    }
+	 
+	
+    public String getName() {
+        return name;
+    }
+    
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getSurname() {
+    	return surname;
+	    
+    }
+     
+    public void setSurname(String surname) {
+      this.surname = surname;
+      
+    }
+    public String getAddress() {
+        return address;
+    }
+    
+    public void setAddress(String address){
+      this.address = address;
+    }
+    
+     
+    public String getEmployeeID() {
+    	return employeeid;
+    	
+    }
+    
+    public void setEmployeeID(String employeeid) {
+    	this.employeeid = employeeid;		
+    }
+    
+
+    public String getBirthday() {
+    	return birthday;
+    	  	
+    }	
+    
+    public void setBirthday(String birthday) {
+    	this.birthday = birthday;
+    }
+    
+    public String getPhonenumber() {
+    	return phonenumber; 		
+    }
+    
+    public void setPhonenumber(String phonenumber) {
+    	this.phonenumber  = phonenumber;
+    }
+    
+    public String getSSSno() {
+    	return sssno;	
+    }
+    
+    public void setSSSno(String sssno) {
+        this.sssno = sssno;
+    }       
+    
+    public String getPhilhealthno() {
+    	return philhealthno;
+    }
+    
+    public void setPhilhealthno(String philhealthno) {
+    	this.philhealthno = philhealthno;
+    
+    }
+    public String getTinno() {
+    	return tinno;
+  
+    }
+    
+    public void setTinno(String tinno) {
+		this.tinno = tinno;
+    }
+    
+    public String getPagibigno() {
+    	return pagibigno;
+	
+    }
+
+    public void setPagibigno(String pagibigno) {
+	    this.pagibigno = pagibigno;		
+	
+    }
+    
+    public String getStatus() {
+    	return status;
+    	
+    }
+
+    public void setStatus(String status) {
+         this.status = status;		
+    	
+    }
+    
+    
+    public String getImmediatesupervisor() {
+    	return immediatesupervisor;
+    	
+    }
+
+    public void setImmediatesupervisor(String immediatesupervisor) {
+    this.immediatesupervisor = immediatesupervisor;		
+    	
+    }
+   
+    
+    public String getPosition() {
+    	return position;
+    	
+    }
+
+    public void setPosition(String position) {
+    this.position = position;		
+    	
+    }
+   
+   
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+ 
+ 
+    public void setHoursWorked(double hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+ 
+ 
+    public double getHourlyPayRate() {
+        return hourlyPayRate;
+    }
+ 
+ 
+    public void setHourlyPayRate(double hourlyPayRate) {
+        this.hourlyPayRate = hourlyPayRate;
+        
+    }
+    
+    public double getDailyhoursworked() {
+        return dailyhoursworked;
+    }
+     
+     
+    public void setDailyhoursworked(double dailyhoursworked) { 
+        this.dailyhoursworked = dailyhoursworked;
+    }
+     
+     
+    public double getDailypayrate() {
+        return dailypayrate;
+            
+    }
+    
+    public void setDailypayrate(double dailypayrate) {
+    	this.dailypayrate = dailypayrate;
+    	
+    }
+    
+    public double getSss() {
+        return sss;
+    }
+ 
+ 
+    public void setSss(double sss) {
+        this.sss = sss;
+    
+   {
+	    	
+
+	 
+	    	
+   }	
+   }
+}
