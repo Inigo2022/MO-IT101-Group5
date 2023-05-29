@@ -100,13 +100,15 @@ public class Payroll
         double Grosswithdeduction = grossAmount - data.philhealth - data.pagibig - data.sss;
         double Grosspay = Grosswithdeduction  + data.ricesubsidyallowance + data.phoneallowance + data.clothingallowance;
         double Netpay = Grosspay - data.tax;
+        double totalTax = data.sss + data.philhealth + data.sss;
         
         
         System.out.println("-----------------------------");
         System.out.println("DEDUCTIONS");
         System.out.println("Philhealth:" + data.philhealth);
         System.out.println("Pagibig: " + data.pagibig);
-		System.out.println("SSS Deduction: " + data.sss);
+	System.out.println("SSS Deduction: " + data.sss);
+        System.out.println("TOTAL DEDUCTIONS: " + totalTax );
         System.out.println("-----------------------------");
         System.out.println("TOTAL GROSSPAY");
         System.out.println("Rice Subsidy Allowance:" + data.ricesubsidyallowance);
@@ -116,9 +118,10 @@ public class Payroll
         
         System.out.println("-----------------------------");
         System.out.println("NETPAY");
-       
-		System.out.println("Tax Withholding : " + data.tax);
-		System.out.println("Netpay: " + Netpay);
+                System.out.println("Netpay: " + Netpay);
+                System.out.println("Taxable Income : " + (Netpay - totalTax));
+		System.out.println("Tax Withholding : " + (Netpay - totalTax) * data.tax);
+		
 	
         
 		System.out.println("Do you want to continue? [Y | N]; ");
