@@ -26,6 +26,7 @@ public class PayrollCalc {
     private double dailyhoursworked;
     private double dailypayrate;
     public double sss;
+    public double tax;
     
     
    
@@ -68,7 +69,7 @@ public class PayrollCalc {
  
  public double grosspay(double dailyworked, double dailyhourworked)
  {
-    	double grossPay = (dailypayrate * dailyhoursworked);
+    	double grossPay = (dailypayrate * dailyhoursworked * 30);
     	return grossPay;
     	
  }
@@ -166,22 +167,39 @@ public class PayrollCalc {
 		 
 						
 
-public double Grosspay;
-public double tax;
 
-	 {
+{
 	 {
 		
-			} if (Grosspay <= 20832)
+			} if (grosspay <= 20832){
 				tax = 0;
-	          else if(Grosspay >= 33333) 
-				tax = 0.20 * Grosspay;
-		    	Grosspay = Grosspay - 0;
+                                }
+                            else if(grosspay >= 20832 && grosspay < 33333) {
+				tax = 0.20 ;
+		    	}
+                            else if(grosspay >= 33333 && grosspay < 66667){ 
+				tax = 0.25 ;
+		    	 }
+                            else if(grosspay >= 66667 && grosspay < 166667){ 
+				tax = 0.30 ;
+		    	 }
+                            else if(grosspay >= 166667 && grosspay < 666667){ 
+				tax = 0.32 ;
+		    	 }
+                            else if(grosspay > 666667 ){ 
+				tax = 0.35 ;		
+                         }
 			
 			
-    }
+    
 	 
-	
+         }
+
+    public double tax(double tax){
+        return tax;
+        }
+
+    
     public String getName() {
         return name;
     }
