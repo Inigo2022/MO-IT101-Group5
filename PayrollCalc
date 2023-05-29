@@ -26,7 +26,8 @@ public class PayrollCalc {
     private double dailyhoursworked;
     private double dailypayrate;
     public double sss;
-    public double tax;
+   
+    
     
     
    
@@ -69,7 +70,7 @@ public class PayrollCalc {
  
  public double grosspay(double dailyworked, double dailyhourworked)
  {
-    	double grossPay = (dailypayrate * dailyhoursworked * 30);
+    	double grossPay = (dailypayrate * dailyhoursworked );
     	return grossPay;
     	
  }
@@ -167,7 +168,10 @@ public class PayrollCalc {
 		 
 						
 
-
+public double tax(double grosspay){
+   return tax;
+}
+ public double tax;
 {
 	 {
 		
@@ -195,9 +199,7 @@ public class PayrollCalc {
 	 
          }
 
-    public double tax(double tax){
-        return tax;
-        }
+
 
     
     public String getName() {
