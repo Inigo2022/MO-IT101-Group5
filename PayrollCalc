@@ -25,7 +25,8 @@ public class PayrollCalc {
     private double hourlyPayRate;
     private double dailyhoursworked;
     private double dailypayrate;
-    public double sss;
+    public double ssstax;
+    
    
     
     
@@ -37,28 +38,26 @@ public class PayrollCalc {
  
     }
  
-    public PayrollCalc(String n, String s, String a, String e, String b, String pn, String sn, String ph, String ad, String ti, String pi, String st, String po, String is, double hw, double hpr, double dw, double dpr, double sss)
-    {
-        this.name = n;
-        this.surname = s;
-        this.address = a;
-        this.employeeid= e;
-        this.birthday = b;
-        this.phonenumber = pn;
-        this.sssno = sn;
-        this.philhealthno = ph;
-        this.tinno = ti;
-        this.pagibigno = pi;
-        this.status = st;
-        this.position = po;
-        this.immediatesupervisor = is;
-        this.hoursWorked = hw;
-        this.hourlyPayRate = hpr;
-        this.dailyhoursworked = dw;
-        this.dailypayrate = dpr; 
-        this.sss = sss;
-        
-    }    
+    public PayrollCalc(String n, String s, String a, String e, String b, String pn, String sn, String ph, String ti, String pi, String st, String po, String is, double hw, double hpr, double dw, double dpr, double sss) {
+    this.name = n;
+    this.surname = s;
+    this.address = a;
+    this.employeeid = e;
+    this.birthday = b;
+    this.phonenumber = pn;
+    this.sssno = sn;
+    this.philhealthno = ph;
+    this.tinno = ti;
+    this.pagibigno = pi;
+    this.status = st;
+    this.position = po;
+    this.immediatesupervisor = is;
+    this.hoursWorked = hw;
+    this.hourlyPayRate = hpr;
+    this.dailyhoursworked = dw;
+    this.dailypayrate = dpr; 
+}
+
         
         
      
@@ -74,133 +73,207 @@ public class PayrollCalc {
     	return grossPay;
     	
  }
-      
+      double grosspay;
  public double philhealth(double grosspay)
- {
-		return philhealth;
-  		
-      
- } 	
-        int philhealth;
-        double grosspay;
-	    
+ {				    	
+        double philhealth = 0.0;  
 			
 		{
 	    if (grosspay >= 0.00 && grosspay <= 10000) {
 	        philhealth = 300;
-	       } else if (grosspay >= 10000 && grosspay <= 60000) {
+	       } else  {
 	        philhealth = 600;
-          }
+          }return philhealth;
         }
-			
+ }	
 		
   public double pagibig(double grosspay)
-{
-		return pagibig;
-			  		
-} 	
-						
-		int pagibig;
-						
-		{
-		if (grosspay >= 0.00 && grosspay <= 10000) {
-		    pagibig = 50;
-		   } else if (grosspay >= 10000 && grosspay <= 60000) {
-		    pagibig = 100;
-	      }
-	    }	
+{                                  
+        double pagibig = 0.0;
+                        
+        {
+             if (grosspay<= 1500){
+                pagibig = grosspay * 0.01;
+            } else if (grosspay > 1500){
+                pagibig = 100;    
+            
+            
+          }    
+          }
+        return pagibig;
+        }
 
+  public double sss(double grosspay)
+{
+	double sss = 0.0;			
+		{
+		if (grosspay < 3250) {
+                     ssstax = 135;
+                 } else if (grosspay <= 3750 && grosspay > 3250) {
+                     ssstax = 157.50;
+                 } else if (grosspay <= 4250 && grosspay > 3750) {
+                     ssstax = 180.00;
+                 } else if (grosspay <= 4750 && grosspay > 4250) {
+                     ssstax = 202.50;
+                 } else if (grosspay <= 5250 && grosspay > 4750) {
+                     ssstax = 225.00;
+                 } else if (grosspay <= 5750 && grosspay > 5250) {
+                     ssstax = 247.50;
+                 } else if (grosspay <= 6250 && grosspay > 5750) {
+                     ssstax = 270.00;
+                 } else if (grosspay <= 6750 && grosspay > 6250) {
+                     ssstax = 292.50;
+                 } else if (grosspay <= 7250 && grosspay > 6750) {
+                     ssstax = 315.00;
+                 } else if (grosspay <= 7750 && grosspay > 7250) {
+                     ssstax = 337.50;
+                 } else if (grosspay <= 8250 && grosspay > 7750) {
+                     ssstax = 360.00;
+                 } else if (grosspay <= 8750 && grosspay > 8250) {
+                     ssstax = 382.50;
+                 } else if (grosspay <= 9250 && grosspay > 8750) {
+                     ssstax = 405.00;
+                 } else if (grosspay <= 9750 && grosspay > 9250) {
+                     ssstax = 427.50;
+                 } else if (grosspay <= 10250 && grosspay > 9750) {
+                     ssstax = 450.00;
+                 } else if (grosspay <= 10750 && grosspay > 10250) {
+                     ssstax = 472.50;
+                 } else if (grosspay <= 11250 && grosspay > 10750) {
+                     ssstax = 495.00;
+                 } else if (grosspay <= 11750 && grosspay > 11250) {
+                     ssstax = 517.50;
+                 } else if (grosspay <= 12250 && grosspay > 11750) {
+                     ssstax = 540.00;
+                 } else if (grosspay <= 12750 && grosspay > 12250) {
+                     ssstax = 562.50;
+                 } else if (grosspay <= 13250 && grosspay > 12750) {
+                     ssstax = 585.00;
+                 } else if (grosspay <= 13750 && grosspay > 13250) {
+                     ssstax = 607.50;
+                 } else if (grosspay <= 14250 && grosspay > 13750) {
+                     ssstax = 630.00;
+                 } else if (grosspay <= 14750 && grosspay > 14250) {
+                     ssstax = 652.50;
+                 } else if (grosspay <= 15250 && grosspay > 14750) {
+                     ssstax = 675.00;
+                 } else if (grosspay <= 15750 && grosspay > 15250) {
+                     ssstax = 697.50;
+                 } else if (grosspay <= 16250 && grosspay > 15750) {
+                     ssstax = 720.00;
+                 } else if (grosspay <= 16750 && grosspay > 16250) {
+                     ssstax = 742.50;
+                 } else if (grosspay <= 17250 && grosspay > 16750) {
+                     ssstax = 765.00;
+                 } else if (grosspay <= 17750 && grosspay > 17250) {
+                     ssstax = 787.50;
+                 } else if (grosspay <= 18250 && grosspay > 17750) {
+                     ssstax = 810.00;
+                 } else if (grosspay <= 18750 && grosspay > 18250) {
+                     ssstax = 832.50;
+                 } else if (grosspay <= 19250 && grosspay > 18750) {
+                     ssstax = 855.00;
+                 } else if (grosspay <= 19750 && grosspay > 19250) {
+                     ssstax = 877.50;
+                 } else if (grosspay <= 20250 && grosspay > 19750) {
+                     ssstax = 900.00;
+                 } else if (grosspay <= 20750 && grosspay > 20250) {
+                     ssstax = 922.50;
+                 } else if (grosspay <= 21250 && grosspay > 20750) {
+                     ssstax = 945.00;
+                 } else if (grosspay <= 21750 && grosspay > 21250) {
+                     ssstax = 967.50;
+                 } else if (grosspay <= 22250 && grosspay > 21750) {
+                     ssstax = 990.00;
+                 } else if (grosspay <= 22750 && grosspay > 22250) {
+                     ssstax = 1012.50;
+                 } else if (grosspay <= 23250 && grosspay > 22750) {
+                     ssstax = 1035.00;
+                 } else if (grosspay <= 23750 && grosspay > 23250) {
+                     ssstax = 1057.50;
+                 } else if (grosspay <= 24250 && grosspay > 23750) {
+                     ssstax = 1080.00;
+                 } else if (grosspay <= 24750 && grosspay > 24250) {
+                     ssstax = 1102.50;
+                 } else if (grosspay > 24750) {
+                     ssstax = 1125.00;
+        }
+	    }             
+                    return ssstax;
+}
  public double ricesubsidyallowance(double grosspay)
 {
-		return ricesubsidyallowance;
-									  											      
-} 	
-												
-		int ricesubsidyallowance;												
-		{
-	    if (grosspay >= 0.00 && grosspay <= 22000) {
-		    ricesubsidyallowance = 1500;
-		    } else if (grosspay >= 23000 && grosspay <= 80000) {
-			ricesubsidyallowance = 3000;
-			} else {
-				 
-	      }
-        }	
-					
- public double phoneallowance(double grosspay)
-{
-		return phoneallowance;
-											  		
-} 	
-		double phoneallowance;
-													
-{
-		if (grosspay >= 0.00 && grosspay <= 22000) {
-		    phoneallowance = 500;
-		    } else if (grosspay >= 23000 && grosspay <= 40000) { 
-			phoneallowance = 800;
-					 
-			} else if (grosspay >= 23000 && grosspay <= 80000) {
-			phoneallowance = 1000;
-			} else {
-			
-	       }						
-	     }	
-			
- public double clothingallowance(double grosspay)
-{
-			return clothingallowance;										  													      
-} 	
-														
-		 double clothingallowance;											
-		 {
-		 if (grosspay >= 0.00 && grosspay <= 22000) {
-			clothingallowance = 500;
-			} else if (grosspay >= 23000 && grosspay <= 40000) { 
-			clothingallowance = 800;
-			} else if (grosspay >= 23000 && grosspay <= 80000) {
-		     clothingallowance= 1000;
-			} else {
-		    
-	        }						
-		  }		
-		 
-		 
-						
-
-public double tax(double grosspay){
-   return tax;
-}
- public double tax;
-{
-	 {
-		
-			} if (grosspay <= 20832){
-				tax = 0;
-                                }
-                            else if(grosspay >= 20832 && grosspay < 33333) {
-				tax = 0.20 ;
-		    	}
-                            else if(grosspay >= 33333 && grosspay < 66667){ 
-				tax = 0.25 ;
-		    	 }
-                            else if(grosspay >= 66667 && grosspay < 166667){ 
-				tax = 0.30 ;
-		    	 }
-                            else if(grosspay >= 166667 && grosspay < 666667){ 
-				tax = 0.32 ;
-		    	 }
-                            else if(grosspay > 666667 ){ 
-				tax = 0.35 ;		
-                         }
-			
-			
+    double ricesubsidyallowance = 0.0;
     
-	 
-         }
+    if (status.equals("regular")) {
+        ricesubsidyallowance = 1500;
+    } else if (status.equals("non-regular")) {
+        ricesubsidyallowance = 0;
+    }
+    
+    return ricesubsidyallowance;
+}
+
+					
+ public static double calculatePhoneAllowance(String position, String status) {
+    double phoneAllowance = 0.0;
+    
+    if (status.equals("regular")) {
+        if (position.equalsIgnoreCase("manager")) {
+            phoneAllowance = 1000;
+        } else if (position.equalsIgnoreCase("team leader")) {
+            phoneAllowance = 800;
+        } else if (position.equalsIgnoreCase("rank and file")) {
+            phoneAllowance = 500;
+        }
+    } else if (status.equals("non-regular")) {
+        phoneAllowance = 0;
+    }
+    
+    return phoneAllowance;
+}
+
+ 
+			
+public double calculateClothingAllowance(String position, String status) {
+    double clothingAllowance = 0.0;
+    
+    if (status.equalsIgnoreCase("regular")) {
+        if (position.equalsIgnoreCase("manager")) {
+            clothingAllowance = 1000;
+        } else if (position.equalsIgnoreCase("team leader")) {
+            clothingAllowance = 800;
+        } else if (position.equalsIgnoreCase("rank and file")) {
+            clothingAllowance = 500;
+        }
+    } else if (status.equalsIgnoreCase("non-regular")) {
+        clothingAllowance = 0;
+    }
+    
+    return clothingAllowance;
+}
+			
 
 
+ public double getTax(double grosspay) {
+    double tax = 0.0;
+    if (grosspay <= 20832) {
+        tax = grosspay * 0.0;  
+    } else if (grosspay >= 20832 && grosspay < 33333) {
+        tax = (grosspay - 20832) * 0.20;
+    } else if (grosspay >= 33333 && grosspay < 66667) {
+        tax = (grosspay - 33333) * 0.25;
+    } else if (grosspay >= 66667 && grosspay < 166667) {
+        tax = (grosspay - 66667) * 0.30;
+    } else if (grosspay >= 166667 && grosspay < 666667) {
+        tax = (grosspay - 166667) * 0.32;
+    } else if (grosspay >= 666667) {
+        tax = (grosspay - 666667) * 0.35;
+    }
+    return tax;
+}
 
+      
     
     public String getName() {
         return name;
@@ -364,19 +437,11 @@ public double tax(double grosspay){
     	
     }
     
-    public double getSss() {
-        return sss;
+public double getSsstax() {
+        return ssstax;
     }
- 
- 
-    public void setSss(double sss) {
-        this.sss = sss;
-    
-   {
-	    	
-
-	 
-	    	
-   }	
-   }
 }
+
+
+
+
