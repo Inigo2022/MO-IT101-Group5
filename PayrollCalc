@@ -1,10 +1,3 @@
-
-package payroll;
-
-/**
- *
- * @author Iñigo
- */
 public class PayrollCalc {
    
 	
@@ -76,15 +69,18 @@ public class PayrollCalc {
       double grosspay;
  public double philhealth(double grosspay)
  {				    	
-        double philhealth = 0.0;  
+        double philhealth = grosspay * 0.015;  
 			
 		{
-	    if (grosspay >= 0.00 && grosspay <= 10000) {
-	        philhealth = 300;
-	       } else  {
-	        philhealth = 600;
-          }return philhealth;
-        }
+			 if (grosspay<= 10000){
+	                philhealth = grosspay * 0.015;
+	            } else if (grosspay >= 10001 && grosspay == 59999){
+	                philhealth = grosspay * 0.015;
+	            } else if (grosspay >= 60000) {
+	            	philhealth = grosspay * 0.015;
+	            }
+                }
+		      return philhealth;
  }	
 		
   public double pagibig(double grosspay)
@@ -105,109 +101,109 @@ public class PayrollCalc {
 
   public double sss(double grosspay)
 {
-	double sss = 0.0;			
+	double sss = 0;			
 		{
 		if (grosspay < 3250) {
-                     ssstax = 135;
+                     sss = 135;
                  } else if (grosspay <= 3750 && grosspay > 3250) {
-                     ssstax = 157.50;
+                     sss = 157.50;
                  } else if (grosspay <= 4250 && grosspay > 3750) {
-                     ssstax = 180.00;
+                     sss = 180.00;
                  } else if (grosspay <= 4750 && grosspay > 4250) {
-                     ssstax = 202.50;
+                     sss = 202.50;
                  } else if (grosspay <= 5250 && grosspay > 4750) {
-                     ssstax = 225.00;
+                     sss = 225.00;
                  } else if (grosspay <= 5750 && grosspay > 5250) {
-                     ssstax = 247.50;
+                     sss = 247.50;
                  } else if (grosspay <= 6250 && grosspay > 5750) {
-                     ssstax = 270.00;
+                     sss = 270.00;
                  } else if (grosspay <= 6750 && grosspay > 6250) {
-                     ssstax = 292.50;
+                     sss = 292.50;
                  } else if (grosspay <= 7250 && grosspay > 6750) {
-                     ssstax = 315.00;
+                     sss = 315.00;
                  } else if (grosspay <= 7750 && grosspay > 7250) {
-                     ssstax = 337.50;
+                     sss = 337.50;
                  } else if (grosspay <= 8250 && grosspay > 7750) {
-                     ssstax = 360.00;
+                     sss = 360.00;
                  } else if (grosspay <= 8750 && grosspay > 8250) {
-                     ssstax = 382.50;
+                     sss = 382.50;
                  } else if (grosspay <= 9250 && grosspay > 8750) {
-                     ssstax = 405.00;
+                     sss = 405.00;
                  } else if (grosspay <= 9750 && grosspay > 9250) {
-                     ssstax = 427.50;
+                     sss = 427.50;
                  } else if (grosspay <= 10250 && grosspay > 9750) {
-                     ssstax = 450.00;
+                     sss = 450.00;
                  } else if (grosspay <= 10750 && grosspay > 10250) {
-                     ssstax = 472.50;
+                     sss = 472.50;
                  } else if (grosspay <= 11250 && grosspay > 10750) {
-                     ssstax = 495.00;
+                     sss = 495.00;
                  } else if (grosspay <= 11750 && grosspay > 11250) {
-                     ssstax = 517.50;
+                     sss = 517.50;
                  } else if (grosspay <= 12250 && grosspay > 11750) {
-                     ssstax = 540.00;
+                     sss = 540.00;
                  } else if (grosspay <= 12750 && grosspay > 12250) {
-                     ssstax = 562.50;
+                     sss = 562.50;
                  } else if (grosspay <= 13250 && grosspay > 12750) {
-                     ssstax = 585.00;
+                     sss = 585.00;
                  } else if (grosspay <= 13750 && grosspay > 13250) {
-                     ssstax = 607.50;
+                     sss = 607.50;
                  } else if (grosspay <= 14250 && grosspay > 13750) {
-                     ssstax = 630.00;
+                     sss = 630.00;
                  } else if (grosspay <= 14750 && grosspay > 14250) {
-                     ssstax = 652.50;
+                     sss = 652.50;
                  } else if (grosspay <= 15250 && grosspay > 14750) {
-                     ssstax = 675.00;
+                     sss = 675.00;
                  } else if (grosspay <= 15750 && grosspay > 15250) {
-                     ssstax = 697.50;
+                     sss = 697.50;
                  } else if (grosspay <= 16250 && grosspay > 15750) {
-                     ssstax = 720.00;
+                     sss = 720.00;
                  } else if (grosspay <= 16750 && grosspay > 16250) {
-                     ssstax = 742.50;
+                     sss = 742.50;
                  } else if (grosspay <= 17250 && grosspay > 16750) {
-                     ssstax = 765.00;
+                     sss = 765.00;
                  } else if (grosspay <= 17750 && grosspay > 17250) {
-                     ssstax = 787.50;
+                     sss = 787.50;
                  } else if (grosspay <= 18250 && grosspay > 17750) {
-                     ssstax = 810.00;
+                     sss = 810.00;
                  } else if (grosspay <= 18750 && grosspay > 18250) {
-                     ssstax = 832.50;
+                     sss = 832.50;
                  } else if (grosspay <= 19250 && grosspay > 18750) {
-                     ssstax = 855.00;
+                     sss = 855.00;
                  } else if (grosspay <= 19750 && grosspay > 19250) {
-                     ssstax = 877.50;
+                     sss = 877.50;
                  } else if (grosspay <= 20250 && grosspay > 19750) {
-                     ssstax = 900.00;
+                     sss = 900.00;
                  } else if (grosspay <= 20750 && grosspay > 20250) {
-                     ssstax = 922.50;
+                     sss = 922.50;
                  } else if (grosspay <= 21250 && grosspay > 20750) {
-                     ssstax = 945.00;
+                     sss = 945.00;
                  } else if (grosspay <= 21750 && grosspay > 21250) {
-                     ssstax = 967.50;
+                     sss = 967.50;
                  } else if (grosspay <= 22250 && grosspay > 21750) {
-                     ssstax = 990.00;
+                     sss = 990.00;
                  } else if (grosspay <= 22750 && grosspay > 22250) {
-                     ssstax = 1012.50;
+                     sss = 1012.50;
                  } else if (grosspay <= 23250 && grosspay > 22750) {
-                     ssstax = 1035.00;
+                     sss = 1035.00;
                  } else if (grosspay <= 23750 && grosspay > 23250) {
-                     ssstax = 1057.50;
+                     sss = 1057.50;
                  } else if (grosspay <= 24250 && grosspay > 23750) {
-                     ssstax = 1080.00;
+                     sss = 1080.00;
                  } else if (grosspay <= 24750 && grosspay > 24250) {
-                     ssstax = 1102.50;
+                     sss = 1102.50;
                  } else if (grosspay > 24750) {
-                     ssstax = 1125.00;
+                     sss = 1125.00;
         }
 	    }             
-                    return ssstax;
+                    return sss;
 }
  public double ricesubsidyallowance(double grosspay)
 {
     double ricesubsidyallowance = 0.0;
     
-    if (status.equals("regular")) {
+    if (status.equals("Regular")) {
         ricesubsidyallowance = 1500;
-    } else if (status.equals("non-regular")) {
+    } else if (status.equals("Non-regular")) {
         ricesubsidyallowance = 0;
     }
     
@@ -218,15 +214,15 @@ public class PayrollCalc {
  public static double calculatePhoneAllowance(String position, String status) {
     double phoneAllowance = 0.0;
     
-    if (status.equals("regular")) {
-        if (position.equalsIgnoreCase("manager")) {
+    if (status.equals("Regular")) {
+        if (position.equalsIgnoreCase("Manager")) {
             phoneAllowance = 1000;
-        } else if (position.equalsIgnoreCase("team leader")) {
+        } else if (position.equalsIgnoreCase("Team leader")) {
             phoneAllowance = 800;
-        } else if (position.equalsIgnoreCase("rank and file")) {
+        } else if (position.equalsIgnoreCase("Rank and file")) {
             phoneAllowance = 500;
         }
-    } else if (status.equals("non-regular")) {
+    } else if (status.equals("Non-regular")) {
         phoneAllowance = 0;
     }
     
@@ -238,15 +234,15 @@ public class PayrollCalc {
 public double calculateClothingAllowance(String position, String status) {
     double clothingAllowance = 0.0;
     
-    if (status.equalsIgnoreCase("regular")) {
-        if (position.equalsIgnoreCase("manager")) {
+    if (status.equalsIgnoreCase("Regular")) {
+        if (position.equalsIgnoreCase("Manager")) {
             clothingAllowance = 1000;
-        } else if (position.equalsIgnoreCase("team leader")) {
+        } else if (position.equalsIgnoreCase("Team leader")) {
             clothingAllowance = 800;
-        } else if (position.equalsIgnoreCase("rank and file")) {
+        } else if (position.equalsIgnoreCase("Rank and file")) {
             clothingAllowance = 500;
         }
-    } else if (status.equalsIgnoreCase("non-regular")) {
+    } else if (status.equalsIgnoreCase("Non-regular")) {
         clothingAllowance = 0;
     }
     
@@ -434,13 +430,14 @@ public double calculateClothingAllowance(String position, String status) {
     
     public void setDailypayrate(double dailypayrate) {
     	this.dailypayrate = dailypayrate;
+    }	
+    public double getSss() {
+        return getSss();	
     	
     }
-    
-public double getSsstax() {
-        return ssstax;
     }
-}
+    
+
 
 
 
