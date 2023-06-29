@@ -1,5 +1,3 @@
-package payroll;
-
 import java.util.*;
 
 public class Payroll {
@@ -46,10 +44,10 @@ public class Payroll {
 
             boolean validStatus = false;
             while (!validStatus) {
-                System.out.println("Enter your Status (regular/non-regular): ");
+                System.out.println("Enter your Status (Regular/Non-regular): ");
                 String status = input.next();
 
-                if (status.equalsIgnoreCase("regular") || status.equalsIgnoreCase("non-regular")) {
+                if (status.equalsIgnoreCase("Regular") || status.equalsIgnoreCase("Non-regular")) {
                     data.setStatus(status);
                     validStatus = true;
                 } else {
@@ -63,16 +61,16 @@ public class Payroll {
             String position = "";
 
             while (!validPosition) {
-                System.out.println("Enter your Position (manager/team leader/rank and file): ");
+                System.out.println("Enter your Position (Manager/Team leader/Rank and file): ");
                 position = strScanner.nextLine();
 
-                if (position.equalsIgnoreCase("manager")) {
+                if (position.equalsIgnoreCase("Manager")) {
                     data.setPosition("Manager");
                     validPosition = true;
-                } else if (position.equalsIgnoreCase("team leader")) {
+                } else if (position.equalsIgnoreCase("Team leader")) {
                     data.setPosition("Team Leader");
                     validPosition = true;
-                } else if (position.equalsIgnoreCase("rank and file")) {
+                } else if (position.equalsIgnoreCase("Rank and file")) {
                     data.setPosition("Rank and File");
                     validPosition = true;
                 } else {
@@ -120,7 +118,7 @@ public class Payroll {
             System.out.println("Daily Pay Rate: " + data.getDailypayrate());
 
             double pagibig = data.pagibig(grossAmount);
-            double ssstax = data.sss(grossAmount);
+            double sss = data.sss(grossAmount);
             double philhealth = data.philhealth(grossAmount);
 
             String positionValue = data.getPosition();
@@ -130,17 +128,17 @@ public class Payroll {
             double phoneAllowance = PayrollCalc.calculatePhoneAllowance(positionValue, statusValue);
             double clothingAllowance = data.calculateClothingAllowance(positionValue, statusValue);
 
-            double Grosswithdeduction = grossAmount - philhealth - pagibig - ssstax;
+            double Grosswithdeduction = grossAmount - philhealth - pagibig - sss;
             double Grosspay = Grosswithdeduction + ricesubsidyallowance + phoneAllowance + clothingAllowance;
             double Allowance = ricesubsidyallowance + phoneAllowance + clothingAllowance;
-            double totalDeduction = ssstax + philhealth + pagibig;
+            double totalDeduction = sss + philhealth + pagibig;
             double tax = data.getTax(Grosswithdeduction);
             double incomeTax = Grosswithdeduction - tax;
             double netPay = incomeTax + Allowance;
 
             System.out.println("----------------------------");
             System.out.println("DEDUCTIONS");
-            System.out.println("SSS Deduction: " + ssstax);
+            System.out.println("SSS Deduction: " + sss);
             System.out.println("Philhealth Deduction:" + philhealth);
             System.out.println("Pagibig Deduction: " + pagibig);
             System.out.println("-----------------------------");
@@ -151,7 +149,7 @@ public class Payroll {
             System.out.println("Income: " + grossAmount);
             System.out.println("Tax Withholding: " + tax);
             System.out.println("Income with tax: " + incomeTax);
-            System.out.println("TOTAL DEDUCTIONS: " + (tax + philhealth + pagibig + ssstax));
+            System.out.println("TOTAL DEDUCTIONS: " + (tax + philhealth + pagibig + sss));
 
             System.out.println("-----------------------------");
             System.out.println("ALLOWANCE");
